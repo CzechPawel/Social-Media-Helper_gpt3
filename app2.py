@@ -7,7 +7,7 @@ def app():
     # Creating an object of prediction service
     pred = Summarize()
 
-    api_key = "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"
+    api_key = "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"
 
     # Using the streamlit cache
     @st.cache
