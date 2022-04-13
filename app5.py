@@ -7,7 +7,7 @@ def app():
     # Creating an object of prediction service
     pred = Notes()
 
-    api_key = "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"
+    api_key = "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"
 
     # Using the streamlit cache
     @st.cache
@@ -17,20 +17,7 @@ def app():
     if api_key:
 
         # Setting up the Title
-        st.title("Study Notes")
-
-        # st.write("---")
-
-        st.write(
-            f"""
-        ## How to use
-        - Type or copy in the text you want to create study notes for
-        - Click on Submit to get study notes
-        - Multiple parameters can be used to make the notes longer, shorter or focused on specific information  
-
-        """
-        )
-
+        st.title("Create Study Notes")
         s_example = "Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to the natural intelligence displayed by humans or animals. Leading AI textbooks define the field as the study of 'intelligent agents': any system that perceives its environment and takes actions that maximize its chance of achieving its goals. Some popular accounts use the term 'artificial intelligence' to describe machines that mimic cognitive functions that humans associate with the human mind, such as learning and problem solving, however this definition is rejected by major AI researchers. AI applications include advanced web search engines, recommendation systems (used by YouTube, Amazon and Netflix), understanding human speech (such as Siri or Alexa), self-driving cars (such as Tesla), and competing at the highest level in strategic game systems (such as chess and Go). As machines become increasingly capable, tasks considered to require intelligence are often removed from the definition of AI, a phenomenon known as the AI effect. For instance, optical character recognition is frequently excluded from things considered to be AI, having become a routine technology."
         input = st.text_area(
             "Use the example below or input your own text in English (between 1,000 and 10,000 characters)",
@@ -40,8 +27,6 @@ def app():
         )
 
         if st.button("Submit"):
-            st.write("**Output**")
-            st.write(f"""---""")
             with st.spinner(text="In progress"):
                 report_text = process_prompt(input)
                 st.markdown(report_text)
