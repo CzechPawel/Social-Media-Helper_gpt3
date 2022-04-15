@@ -7,7 +7,7 @@ def app():
     # Creating an object of prediction service
     pred = Summarize()
 
-    api_key = "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"
+    api_key = st.sidebar.text_input("OpenAI API Key:", type="password")
 
     # Using the streamlit cache
     @st.cache
